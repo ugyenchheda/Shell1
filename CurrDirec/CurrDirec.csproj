@@ -49,5 +49,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChangeDir\ChangeDir.csproj">
+      <Project>{983861a4-a2d2-4bbd-951e-05481605046d}</Project>
+      <Name>ChangeDir</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

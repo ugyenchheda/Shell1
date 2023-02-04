@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Shell
 {
@@ -23,7 +20,6 @@ namespace Shell
         {
             { "ls", @".\ListDirectories.exe" },
             { "pwd", @".\CurrDirec.exe" },
-            { "cd", @".\ChangeDir.exe" },
             { "clear", @".\Clear.exe" }
         };
 
@@ -41,12 +37,32 @@ namespace Shell
 
         public int Execute(string input)
         {
+            if (input.StartsWith("cd "))
+            {
+                string newDir = input.Substring(3);
+                var process = new Process
+                {
+                    StartInfo = new ProcessStartInfo(@".\ChangeDir.exe")
+                    {
+                        UseShellExecute = false,
+                        Arguments = newDir
+                    }
+                };
+
+                process.Start();
+                process.WaitForExit();
+
+                return 0;
+            }
+
             if (Aliases.Keys.Contains(input))
             {
-                var process = new Process();
-                process.StartInfo = new ProcessStartInfo(Aliases[input])
+                var process = new Process
                 {
-                    UseShellExecute = false
+                    StartInfo = new ProcessStartInfo(Aliases[input])
+                    {
+                        UseShellExecute = false
+                    }
                 };
 
                 process.Start();
