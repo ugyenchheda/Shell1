@@ -11,17 +11,42 @@ namespace ListDirectories
     {
         static void Main(string[] args)
         {
-            var files = Directory.GetFiles(Directory.GetCurrentDirectory());
-            var directories = Directory.GetDirectories(Directory.GetCurrentDirectory());
 
-            foreach (var dir in directories)
+            string newFilePath = "\\\\wsl.localhost\\Ubuntu\\home\\ugyen\\OS\\Shell\\ChangeDir\\workingDir.txt";
+            string pathAvai = File.ReadAllText(newFilePath);
+            var newWrkDir = File.ReadAllText(newFilePath);
+
+            if (pathAvai.Length == 0)
             {
-                Console.WriteLine(dir); //list the directories in the current directory
+
+                var files = Directory.GetFiles(Directory.GetCurrentDirectory());
+                var directories = Directory.GetDirectories(Directory.GetCurrentDirectory());
+
+                foreach (var dir in directories)
+                {
+                    Console.WriteLine(dir); //list the directories in the current directory
+                }
+
+                foreach (var file in files)
+                {
+                    Console.WriteLine(file);
+                }
             }
-
-            foreach (var file in files)
+            else
             {
-                Console.WriteLine(file);
+                Directory.SetCurrentDirectory(newWrkDir);
+                var files = Directory.GetFiles(Directory.GetCurrentDirectory());
+                var directories = Directory.GetDirectories(Directory.GetCurrentDirectory());
+
+                foreach (var dir in directories)
+                {
+                    Console.WriteLine(dir); //list the directories in the current directory
+                }
+
+                foreach (var file in files)
+                {
+                    Console.WriteLine(file);
+                }
             }
         }
     }
