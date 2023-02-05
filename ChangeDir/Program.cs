@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Shell;
+
 
 namespace ChangeDir
 {
@@ -12,18 +15,50 @@ namespace ChangeDir
         static void Main(string[] args)
         {
 
-            DirectoryInfo parent = new DirectoryInfo(@"C:\Users\lenevo");
+            string newDir = args[0];
+            string newFilePath = "\\\\wsl.localhost\\Ubuntu\\home\\ugyen\\OS\\Shell\\ChangeDir\\workingDir.txt";
+            string pathAvai = File.ReadAllText(newFilePath);
+            var newWrkDir = File.ReadAllText(newFilePath);
 
-            foreach (DirectoryInfo child in parent.GetDirectories())
+
+            if (pathAvai.Length == 0)
             {
-                string newName = child.FullName.Replace('_', '-');
+                string workingDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                string fullPath = Path.Combine(workingDir, newDir);
 
-                if (newName != child.FullName)
+
+                try
                 {
-                    child.MoveTo(newName);
+                    Directory.SetCurrentDirectory(fullPath);
+                    string savPath = @"\\wsl.localhost\Ubuntu\home\ugyen\OS\Shell\ChangeDir\workingDir.txt";
+                    File.WriteAllText(savPath, Directory.GetCurrentDirectory());
                 }
+                catch (DirectoryNotFoundException e)
+                {
+                    Console.WriteLine("The specified directory does not exist. {0}", e);
+                }
+                Console.WriteLine(fullPath);
+
             }
-            Console.WriteLine("Hello world");
+            else {
+
+                Directory.SetCurrentDirectory(newWrkDir);
+                string workingDir = Directory.GetCurrentDirectory();
+                string fullPath = Path.Combine(workingDir, newDir);
+
+
+                try
+                {
+                    Directory.SetCurrentDirectory(fullPath);
+                    string savPath = @"\\wsl.localhost\Ubuntu\home\ugyen\OS\Shell\ChangeDir\workingDir.txt";
+                    File.WriteAllText(savPath, Directory.GetCurrentDirectory());
+                }
+                catch (DirectoryNotFoundException e)
+                {
+                    Console.WriteLine("The specified directory does not exist. {0}", e);
+                }
+                Console.WriteLine(fullPath);
+            }
         }
     }
 }
