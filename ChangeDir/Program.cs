@@ -37,7 +37,7 @@ namespace ChangeDir
                 {
                     Console.WriteLine("The specified directory does not exist. {0}", e);
                 }
-                Console.WriteLine(fullPath);
+               // Console.WriteLine(fullPath);
 
             }
             else {
@@ -57,7 +57,7 @@ namespace ChangeDir
                 {
                     Console.WriteLine("The specified directory does not exist. {0}", e);
                 }
-                Console.WriteLine(fullPath);
+               // Console.WriteLine(fullPath);
             }
         }
     }

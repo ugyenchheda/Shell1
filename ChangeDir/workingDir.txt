@@ -1,1 +1,1 @@
-\\wsl.localhost\Ubuntu\home\ugyen\OS\Shell\Shell\bin\Debug\ugyen\lama
+\\wsl.localhost\Ubuntu\home\ugyen\OS\Shell\Shell\bin\Debug
