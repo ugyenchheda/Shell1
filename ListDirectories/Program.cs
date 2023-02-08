@@ -29,7 +29,7 @@ namespace ListDirectories
 
                 foreach (var file in files)
                 {
-                    Console.WriteLine(file);
+                    Console.WriteLine(file); //List the files in the current direcoty
                 }
             }
             else
