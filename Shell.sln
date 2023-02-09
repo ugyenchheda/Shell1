@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrDirec", "CurrDirec\Curr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangeDir", "ChangeDir\ChangeDir.csproj", "{983861A4-A2D2-4BBD-951E-05481605046D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCount", "WordCount\WordCount.csproj", "{86E3DD39-386F-4712-A7B2-EAA4A6A92FF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{983861A4-A2D2-4BBD-951E-05481605046D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{983861A4-A2D2-4BBD-951E-05481605046D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{983861A4-A2D2-4BBD-951E-05481605046D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86E3DD39-386F-4712-A7B2-EAA4A6A92FF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86E3DD39-386F-4712-A7B2-EAA4A6A92FF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86E3DD39-386F-4712-A7B2-EAA4A6A92FF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86E3DD39-386F-4712-A7B2-EAA4A6A92FF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

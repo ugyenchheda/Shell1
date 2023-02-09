@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -7,10 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Shell;
 
-
 namespace ChangeDir
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -20,7 +20,7 @@ namespace ChangeDir
             string pathAvai = File.ReadAllText(newFilePath);
             var newWrkDir = File.ReadAllText(newFilePath);
 
-
+            Console.Write(newDir);
             if (pathAvai.Length == 0)
             {
                 string workingDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
@@ -37,10 +37,11 @@ namespace ChangeDir
                 {
                     Console.WriteLine("The specified directory does not exist. {0}", e);
                 }
-               // Console.WriteLine(fullPath);
+                // Console.WriteLine(fullPath);
 
             }
-            else {
+            else
+            {
 
                 Directory.SetCurrentDirectory(newWrkDir);
                 string workingDir = Directory.GetCurrentDirectory();
@@ -57,8 +58,30 @@ namespace ChangeDir
                 {
                     Console.WriteLine("The specified directory does not exist. {0}", e);
                 }
-               // Console.WriteLine(fullPath);
+                // Console.WriteLine(fullPath);
             }
+ 
+        }
+    }
+    public class Change
+    {
+        public int Execute()
+        {
+
+            string newDirMain = "Hello Ugyen";
+            var process = new Process
+            {
+                StartInfo = new ProcessStartInfo(@"\\wsl.localhost\Ubuntu\home\ugyen\OS\backup\Shell1\CurrDirec\bin\Debug\CurrDirec.exe")
+                {
+                    UseShellExecute = false,
+                    Arguments = "Hello World"
+                }
+            };
+
+            process.Start();
+            process.WaitForExit();
+
+            return 0;
         }
     }
 }
