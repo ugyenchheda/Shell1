@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ChangeDir;
 
 namespace CurrDirec
 {
@@ -11,11 +13,12 @@ namespace CurrDirec
     {
         static void Main(string[] args)
         {
+
             string newFilePath = "\\\\wsl.localhost\\Ubuntu\\home\\ugyen\\OS\\Shell\\ChangeDir\\workingDir.txt";
             string pathAvai = File.ReadAllText(newFilePath);
             var newWrkDir = File.ReadAllText(newFilePath);
 
-            if(pathAvai.Length == 0)
+            if (pathAvai.Length == 0)
             {
                 Console.WriteLine(Directory.GetCurrentDirectory());
 
@@ -26,7 +29,15 @@ namespace CurrDirec
                 string execPath = Directory.GetCurrentDirectory();
                 Console.WriteLine(execPath);
             }
-            
-    }
-    }
+
+            if (args.Length > 0)
+            {
+                Console.WriteLine("Received argument: " + args[0]);
+            }
+            else
+            {
+                Console.WriteLine("No argument received.");
+            }
+        }
+    }    
 }

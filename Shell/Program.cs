@@ -55,6 +55,24 @@ namespace Shell
                 return 0;
             }
 
+            if (input.StartsWith("wc "))
+            {
+                string fileName = input.Substring(3);
+                var process = new Process
+                {
+                    StartInfo = new ProcessStartInfo(@".\WordCount.exe")
+                    {
+                        UseShellExecute = false,
+                        Arguments = fileName
+                    }
+                };
+
+                process.Start();
+                process.WaitForExit();
+
+                return 0;
+            }
+
             if (Aliases.Keys.Contains(input))
             {
                 var process = new Process
