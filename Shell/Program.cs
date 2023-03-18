@@ -26,7 +26,7 @@ namespace Shell
         public void Run()
         {
             string input = null;
-
+//this is done
             do
             {
                 Console.Write("$ ");
