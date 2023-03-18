@@ -27,7 +27,6 @@ namespace Shell
         {
             //this is the part
             string input = null;
-//this is done
             do
             {
                 Console.Write("$ ");
