@@ -14,7 +14,7 @@ namespace CurrDirec
         static void Main(string[] args)
         {
 
-            string newFilePath = "\\\\wsl.localhost\\Ubuntu\\home\\ugyen\\OS\\Shell\\ChangeDir\\workingDir.txt";
+            string newFilePath = "add file location here";
             string pathAvai = File.ReadAllText(newFilePath);
             var newWrkDir = File.ReadAllText(newFilePath);
 
