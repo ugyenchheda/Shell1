@@ -13,7 +13,6 @@ namespace CurrDirec
     {
         static void Main(string[] args)
         {
-
             string newFilePath = "add file location here";
             string pathAvai = File.ReadAllText(newFilePath);
             var newWrkDir = File.ReadAllText(newFilePath);
@@ -21,7 +20,6 @@ namespace CurrDirec
             if (pathAvai.Length == 0)
             {
                 Console.WriteLine(Directory.GetCurrentDirectory());
-
             }
             else
             {
@@ -29,7 +27,6 @@ namespace CurrDirec
                 string execPath = Directory.GetCurrentDirectory();
                 Console.WriteLine(execPath);
             }
-
             if (args.Length > 0)
             {
                 Console.WriteLine("Received argument: " + args[0]);
