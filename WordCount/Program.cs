@@ -19,19 +19,15 @@ namespace WordCount
             if (pathAvai.Length == 0)
             {
                 Console.WriteLine(Directory.GetCurrentDirectory());
-
             }
             else
             {
                 Directory.SetCurrentDirectory(newWrkDir);
             }
-
-
             string fileName = args[0];
             string workingDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             string filePath = Path.Combine(Directory.GetCurrentDirectory(), fileName);
             int wordCount = 0;
-
             try
             {
                 using (StreamReader sr = new StreamReader(filePath))
@@ -47,7 +43,6 @@ namespace WordCount
             {
                 Console.WriteLine("Error reading the file: " + ex.Message);
             }
-
             Console.WriteLine("Number of words in the file: " + wordCount);
             Console.ReadKey();
         }
