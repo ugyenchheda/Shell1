@@ -11,7 +11,7 @@ namespace ListDirectories
     {
         static void Main(string[] args)
         {
-            string newFilePath = "\\\\wsl.localhost\\Ubuntu\\home\\ugyen\\OS\\Shell\\ChangeDir\\workingDir.txt";
+            string newFilePath = "addfile url here";
             string pathAvai = File.ReadAllText(newFilePath);
             var newWrkDir = File.ReadAllText(newFilePath);
 
