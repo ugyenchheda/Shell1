@@ -39,6 +39,7 @@ namespace WordCount
                     }
                 }
             }
+//for error handling 
             catch (Exception ex)
             {
                 Console.WriteLine("Error reading the file: " + ex.Message);
