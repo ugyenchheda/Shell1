@@ -40,6 +40,7 @@ namespace ListDirectories
                 }
                 foreach (var file in files)
                 {
+// for printing file location
                     Console.WriteLine(file);
                 }
             }
