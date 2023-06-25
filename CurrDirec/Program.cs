@@ -16,7 +16,7 @@ namespace CurrDirec
             string newFilePath = "add file location here";
             string pathAvai = File.ReadAllText(newFilePath);
             var newWrkDir = File.ReadAllText(newFilePath);
-
+// for printing path
             if (pathAvai.Length == 0)
             {
                 Console.WriteLine(Directory.GetCurrentDirectory());
